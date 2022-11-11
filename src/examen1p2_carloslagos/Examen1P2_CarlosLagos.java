@@ -22,10 +22,12 @@ public class Examen1P2_CarlosLagos {
     
     public static void main(String[] args) {
         ArrayList listrobot = new ArrayList();
-        int id = 0, x = 0, y = 0, servomot = 0, capmax = 0, cantllantas = 0, cont = 1111, optipo = 0;
+        int id = 0,x = 0, y = 0, servomot = 0, capmax = 0, cantllantas = 0, cont = 1111, optipo = 0;
         boolean carga = false;
         String fecha = "";
         double altura = 0.0, peso = 0.0, velocidadpunta = 0.0;
+        
+        
         
         boolean centinela = true;
         
@@ -101,8 +103,13 @@ public class Examen1P2_CarlosLagos {
                                 System.out.println("Robots Moviles Pesados");
                                 System.out.println("Ingrese el peso del robot: ");
                                 peso = lea.nextDouble();
+                                try{
                                 System.out.println("Ingrese la capacidad maxima que puede cargar: ");
-                                capmax = lea.nextInt();
+                                capmax = lea.nextInt();   
+                                }catch(MiEx e){
+                                    System.out.println(e.getMessage());
+                                }
+                                
                                 
                                 centinela1 = false;
                             }//fin 3
@@ -140,6 +147,18 @@ public class Examen1P2_CarlosLagos {
                 
                 case 2:{
                     System.out.println("Listar Robot");
+                    
+                    System.out.println("Listar los Personajes");
+                    String listar = "";
+                    for (Object t : listrobot) {
+                        if (t instanceof Robot) {
+                            listar += listrobot.indexOf(t) + " - " + t + "\n";//get class se puede usar tambien
+                        }
+
+                    }
+                    System.out.println(listar);
+                    System.out.println();
+                    System.out.println();
                 }//fin 2
                 break;
                 
@@ -157,9 +176,49 @@ public class Examen1P2_CarlosLagos {
             
         }//fin while
         
+        char [][]tablero = new char[8][8];
+        tablero = LlenaTab(8, 8);
+        ImprimeM(tablero, x, y);
   
  
         
     }//fin main 
-    
+     public static char[][]LlenaTab(int fila, int col){
+        char [][]matrizt = new char [fila][col];
+        
+        for (int i = 0; i < fila; i++) {
+            for (int j = 0; j < col; j++) {
+                //Obstaculos
+                matrizt[3][5] = 'X';
+                matrizt[6][2] = 'X';
+                matrizt[1][4] = 'X';
+                matrizt[4][7] = 'X';
+                matrizt[2][1] = 'X';
+                
+                //Cajas
+                matrizt[1][2] = 'C';
+                matrizt[3][4] = 'C';
+                matrizt[4][6] = 'C';
+                matrizt[2][7] = 'C';
+                matrizt[5][1] = 'C';
+                matrizt[6][5] = 'C';
+                
+                matrizt[i][j] = ' ';
+                
+            }
+        }
+        return matrizt;
+    }
+      public static void ImprimeM(char [][] matriz, int x, int y){
+          System.out.println(x + ""+y);
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (i == x && j == y) {
+                    System.out.println('R');
+                }
+                System.out.print("["+matriz[i][j]+"] ");
+            }
+            System.out.println();
+        }
+    }
 }//fin clase

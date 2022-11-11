@@ -18,7 +18,7 @@ public class RobotMovilPesado extends Robot{
         super();
     }
 
-    public RobotMovilPesado(double peso, int capmax) {
+    public RobotMovilPesado(double peso, int capmax) throws MiEx{
         this.peso = peso;
         this.setCapmax(capmax);
     }
@@ -41,12 +41,14 @@ public class RobotMovilPesado extends Robot{
         return capmax;
     }
 
-    public void setCapmax(int capmax) {
-        
+    public void setCapmax(int capmax) throws MiEx {
+
         if (capmax > 5) {
             this.capmax = capmax;
+        } else {
+            throw new MiEx("La capacidad maxima debe ser mayor que 5");
         }
-        
+
     }
 
     @Override
