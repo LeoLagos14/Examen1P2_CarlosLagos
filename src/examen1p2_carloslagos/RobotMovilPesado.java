@@ -20,7 +20,7 @@ public class RobotMovilPesado extends Robot{
 
     public RobotMovilPesado(double peso, int capmax) {
         this.peso = peso;
-        this.capmax = capmax;
+        this.setCapmax(capmax);
     }
 
     public RobotMovilPesado(double peso, int capmax, int id, int x, int y, boolean carga, String fecha) {
@@ -42,7 +42,11 @@ public class RobotMovilPesado extends Robot{
     }
 
     public void setCapmax(int capmax) {
-        this.capmax = capmax;
+        
+        if (capmax > 5) {
+            this.capmax = capmax;
+        }
+        
     }
 
     @Override
