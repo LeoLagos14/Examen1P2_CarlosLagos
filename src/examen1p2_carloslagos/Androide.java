@@ -9,6 +9,30 @@ package examen1p2_carloslagos;
  *
  * @author clago
  */
-public class Androide {
+public class Androide extends Robot {
     
-}
+    private double altura;
+    private double peso;
+
+    public Androide() {
+        super();
+    }
+
+    public Androide(double altura, double peso) {
+        this.altura = altura;
+        this.peso = peso;
+    }
+
+    public Androide(double altura, double peso, int id, int x, int y, boolean carga, String fecha) {
+        super(id, x, y, carga, fecha);
+        this.altura = altura;
+        this.peso = peso;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "Androide{" + "altura=" + altura + ", peso=" + peso + '}';
+    }
+    
+    
+}//fin clase
