@@ -11,7 +11,7 @@ package examen1p2_carloslagos;
  */
 public interface Metodos {
     
-    public void mov(int x, int y,int xf, int yf);
+    public void mov(int x, int y,int xf, int yf, char d);
     public void mnt();
     public void unmt();
     public void rot(int degrees,char a);

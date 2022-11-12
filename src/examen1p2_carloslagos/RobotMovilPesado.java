@@ -56,9 +56,19 @@ public class RobotMovilPesado extends Robot{
         return super.toString() + "RobotMovilPesado{" + "peso=" + peso + ", capmax=" + capmax + '}';
     }
     
-    @Override
-    public void mov(int x, int y,int xf, int yf){
-        
+   public void mov(int x, int y,int xf, int yf, char d){
+        if (d == '^') {
+            y = y - 1;
+                    
+        }else if (d == 'V') {
+            y = y + 1;
+        }else if (d == '>') {
+            x = x + 1;
+        }else if (d == '<') {
+            x = x - 1;
+        }
+        //this.setX(x);
+        //this.setY(y);
     }
     @Override
     public void mnt(){
@@ -72,6 +82,7 @@ public class RobotMovilPesado extends Robot{
     public void rot(int degrees,char a){
         
     }
+
     
     
 }//fin clase

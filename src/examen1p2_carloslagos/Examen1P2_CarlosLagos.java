@@ -19,7 +19,7 @@ public class Examen1P2_CarlosLagos {
      */
     
     static Scanner lea = new Scanner(System.in);
-    
+    static char[][]tablero = new char[8][8];
     public static void main(String[] args) throws MiEx {
         ArrayList listrobot = new ArrayList();
         int id = 0,x = 0, y = 0, servomot = 0, capmax = 0, cantllantas = 0, cont = 1111, optipo = 0;
@@ -35,7 +35,7 @@ public class Examen1P2_CarlosLagos {
             System.out.println("Examen 2 \n");
             System.out.println("1) Crear Robot");
             System.out.println("2) Listar Robot");
-            System.out.println("3) Simular Automaticamente");
+            System.out.println("3) Simular Automaticamente y se muestra el Tablero");
             System.out.println("4) Actuar Manualmente \n");
             System.out.println("Ingrese la opcion que desea: ");
             int opcion = lea.nextInt();
@@ -195,7 +195,7 @@ public class Examen1P2_CarlosLagos {
                 
                 case 3:{
                     System.out.println("Simular Automaticamente");
-                    char[][] tablero = new char[8][8];
+                    tablero = new char[8][8];
                     tablero = LlenaTab(8, 8);
                     ImprimeM(tablero, x, y);
                     

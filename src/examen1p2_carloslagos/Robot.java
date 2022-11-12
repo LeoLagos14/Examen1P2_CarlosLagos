@@ -16,6 +16,7 @@ public abstract class Robot implements Metodos {
     private int y;
     private boolean carga;
     private String fecha;
+    private char d;
 
     public Robot() {
     }
@@ -27,6 +28,15 @@ public abstract class Robot implements Metodos {
         this.carga = carga;
         this.fecha = fecha;
     }
+
+    public char getD() {
+        return d;
+    }
+
+    public void setD(char d) {
+        this.d = d;
+    }
+    
 
     public int getId() {
         return id;
@@ -84,9 +94,9 @@ public abstract class Robot implements Metodos {
     }
     //Polimorfismo
     
-    @Override
-    public void mov(int x, int y,int xf, int yf){
+    public void mov(int x, int y,int xf, int yf, char d){
         
+       
     }
     @Override
     public void mnt(){
