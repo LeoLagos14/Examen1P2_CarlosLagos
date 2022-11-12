@@ -20,9 +20,9 @@ public class Robot {
     public Robot() {
     }
 
-    public Robot(int id, int x, int y, boolean carga, String fecha) {
+    public Robot(int id, int x, int y, boolean carga, String fecha) throws MiEx{
         this.id = id;
-        this.x = x;
+        this.setX(x);
         this.y = y;
         this.carga = carga;
         this.fecha = fecha;
@@ -40,16 +40,26 @@ public class Robot {
         return x;
     }
 
-    public void setX(int x) {
-        this.x = x;
+    public void setX(int x) throws MiEx{
+        if (x > 0 && x <= 7) {
+            this.x = x;
+        }else{
+            throw new MiEx("Su coordenada X se pasa del limite");
+        }
+        
     }
 
     public int getY() {
         return y;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public void setY(int y) throws MiEx {
+        if (y > 0 && y <= 7) {
+            this.y = y;
+        }else{
+            throw new MiEx("Su coordenada Y se pasa del limite");
+        }
+        
     }
 
     public boolean isCarga() {

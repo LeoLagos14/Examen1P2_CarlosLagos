@@ -27,11 +27,11 @@ public class Examen1P2_CarlosLagos {
         String fecha = "";
         double altura = 0.0, peso = 0.0, velocidadpunta = 0.0;
         
-        
+        Robot r = new RobotMovilPesado();
         
         boolean centinela = true;
         
-        while (centinela = true) {            
+        while (centinela == true) {            
             System.out.println("Examen 2 \n");
             System.out.println("1) Crear Robot");
             System.out.println("2) Listar Robot");
@@ -45,10 +45,33 @@ public class Examen1P2_CarlosLagos {
                 case 1:{
                     System.out.println("Crear un Robot");
                     id  = cont;
-                    System.out.println("Ingrese la posicion en x: ");
-                    x = lea.nextInt();
-                    System.out.println("Ingrese la posicion en y: ");
-                    y = lea.nextInt();
+                    boolean c1 = false;
+                    while (c1 == false) {  
+                        try{
+                            System.out.println("Ingrese la posicion en x: ");
+                            x = lea.nextInt();
+                            r.setX(x);
+                            c1 = true;
+                        }catch(MiEx ex){
+                            System.out.println(ex.getMessage());
+                            c1 = false;
+                        }
+                        
+                    }
+                    boolean c3 = false;
+                    while (c3 == false) {  
+                        try{
+                            System.out.println("Ingrese la posicion en y: ");
+                            y = lea.nextInt();
+                            r.setY(y);
+                            c3 = true;
+                        }catch(MiEx ex){
+                            System.out.println(ex.getMessage());
+                            c3 = false;
+                        }
+                        
+                    }
+                    
                     
                     carga = false;
                     
@@ -103,11 +126,18 @@ public class Examen1P2_CarlosLagos {
                                 System.out.println("Robots Moviles Pesados");
                                 System.out.println("Ingrese el peso del robot: ");
                                 peso = lea.nextDouble();
-                                try{
-                                System.out.println("Ingrese la capacidad maxima que puede cargar: ");
-                                capmax = lea.nextInt();   
-                                }catch(MiEx e){
-                                    System.out.println(e.getMessage());
+                                boolean c2 = false;
+                                while (c2 == false) {                                    
+                                    try {
+                                        System.out.println("Ingrese la capacidad maxima que puede cargar: ");
+                                        capmax = lea.nextInt();
+                                        ((RobotMovilPesado)r).setCapmax(capmax);
+                                        c2 = true;
+                                    } catch (MiEx e) {
+                                        System.out.println(e.getMessage());
+                                        c2 = false;
+                                    }
+                                
                                 }
                                 
                                 
@@ -142,6 +172,7 @@ public class Examen1P2_CarlosLagos {
                         cont = cont + 1111;
                         
                     }
+                    
                 }//fin 1
                 break;
                 
@@ -164,6 +195,10 @@ public class Examen1P2_CarlosLagos {
                 
                 case 3:{
                     System.out.println("Simular Automaticamente");
+                    char[][] tablero = new char[8][8];
+                    tablero = LlenaTab(8, 8);
+                    ImprimeM(tablero, x, y);
+                    
                 }//fin 3
                 break;
                 
@@ -172,15 +207,12 @@ public class Examen1P2_CarlosLagos {
                 }//fin 4
                 break;
                 
+                default: 
+                    centinela = false;
             }//fin switch
             
         }//fin while
         
-        char [][]tablero = new char[8][8];
-        tablero = LlenaTab(8, 8);
-        ImprimeM(tablero, x, y);
-  
- 
         
     }//fin main 
      public static char[][]LlenaTab(int fila, int col){
@@ -214,9 +246,10 @@ public class Examen1P2_CarlosLagos {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
                 if (i == x && j == y) {
-                    System.out.println('R');
-                }
+                    System.out.print("[R] ");
+                }else{
                 System.out.print("["+matriz[i][j]+"] ");
+                }
             }
             System.out.println();
         }
