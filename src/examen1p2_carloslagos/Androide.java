@@ -23,7 +23,7 @@ public class Androide extends Robot {
         this.peso = peso;
     }
 
-    public Androide(double altura, double peso, int id, int x, int y, boolean carga, String fecha) {
+    public Androide(double altura, double peso, int id, int x, int y, boolean carga, String fecha) throws MiEx {
         super(id, x, y, carga, fecha);
         this.altura = altura;
         this.peso = peso;
@@ -34,5 +34,12 @@ public class Androide extends Robot {
         return super.toString() + "Androide{" + "altura=" + altura + ", peso=" + peso + '}';
     }
     
-    
+    @Override
+    public int mov(int x, int y,int xf, int yf){
+        return 0;
+    }
+    @Override
+    public void mnt(){
+        
+    }
 }//fin clase

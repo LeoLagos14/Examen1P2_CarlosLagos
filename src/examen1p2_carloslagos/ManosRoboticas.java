@@ -21,7 +21,7 @@ public class ManosRoboticas extends Robot{
         this.servomot = servomot;
     }
 
-    public ManosRoboticas(int servomot, int id, int x, int y, boolean carga, String fecha) {
+    public ManosRoboticas(int servomot, int id, int x, int y, boolean carga, String fecha) throws MiEx {
         super(id, x, y, carga, fecha);
         this.servomot = servomot;
     }
@@ -39,6 +39,12 @@ public class ManosRoboticas extends Robot{
         return super.toString() + "ManosRoboticas{" + "servomot=" + servomot + '}';
     }
     
-    
-    
+    @Override
+    public int mov(int x, int y,int xf, int yf){
+        return 0;
+    }
+    @Override
+    public void mnt(){
+        
+    }
 }//fin clase

@@ -9,7 +9,7 @@ package examen1p2_carloslagos;
  *
  * @author clago
  */
-public abstract class Robot {
+public abstract class Robot implements Metodos {
     
     private int id;
     private int x;
@@ -84,6 +84,13 @@ public abstract class Robot {
     }
     //Polimorfismo
     
-    public [][]char mov(int x, int y,int xf, int yf);
+    @Override
+    public int mov(int x, int y,int xf, int yf){
+        return 0;
+    }
+    @Override
+    public void mnt(){
+        
+    }
     
 }//fin clase

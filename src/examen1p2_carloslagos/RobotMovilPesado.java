@@ -23,7 +23,7 @@ public class RobotMovilPesado extends Robot{
         this.setCapmax(capmax);
     }
 
-    public RobotMovilPesado(double peso, int capmax, int id, int x, int y, boolean carga, String fecha) {
+    public RobotMovilPesado(double peso, int capmax, int id, int x, int y, boolean carga, String fecha) throws MiEx {
         super(id, x, y, carga, fecha);
         this.peso = peso;
         this.capmax = capmax;
@@ -56,6 +56,13 @@ public class RobotMovilPesado extends Robot{
         return super.toString() + "RobotMovilPesado{" + "peso=" + peso + ", capmax=" + capmax + '}';
     }
     
-    
+    @Override
+    public int mov(int x, int y,int xf, int yf){
+        return 0;
+    }
+    @Override
+    public void mnt(){
+        
+    }
     
 }//fin clase

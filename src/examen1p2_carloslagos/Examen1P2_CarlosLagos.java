@@ -20,7 +20,7 @@ public class Examen1P2_CarlosLagos {
     
     static Scanner lea = new Scanner(System.in);
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MiEx {
         ArrayList listrobot = new ArrayList();
         int id = 0,x = 0, y = 0, servomot = 0, capmax = 0, cantllantas = 0, cont = 1111, optipo = 0;
         boolean carga = false;
