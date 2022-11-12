@@ -252,7 +252,8 @@ public class Examen1P2_CarlosLagos {
                     System.out.print("[R] ");
                 }else{
                 System.out.print("["+matriz[i][j]+"] ");
-                }
+                } 
+                        
             }
             System.out.println();
         }

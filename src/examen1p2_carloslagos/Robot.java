@@ -92,5 +92,13 @@ public abstract class Robot implements Metodos {
     public void mnt(){
         
     }
+    @Override
+    public void unmt(){
+        
+    }
+    @Override
+    public void rot(int degrees,char a){
+        
+    }
     
 }//fin clase

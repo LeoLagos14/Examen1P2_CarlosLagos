@@ -64,5 +64,14 @@ public class RobotMovilPesado extends Robot{
     public void mnt(){
         
     }
+    @Override
+    public void unmt(){
+        
+    }
+    @Override
+    public void rot(int degrees,char a){
+        
+    }
+    
     
 }//fin clase

@@ -42,4 +42,12 @@ public class Androide extends Robot {
     public void mnt(){
         
     }
+    @Override
+    public void unmt(){
+        
+    }
+    public void rot(int degrees,char a){
+        
+    }
+    
 }//fin clase
