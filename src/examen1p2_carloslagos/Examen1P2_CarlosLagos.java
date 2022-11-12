@@ -235,6 +235,9 @@ public class Examen1P2_CarlosLagos {
                 matrizt[5][1] = 'C';
                 matrizt[6][5] = 'C';
                 
+                //Destino
+                matrizt[7][7] = 'D';
+                
                 matrizt[i][j] = ' ';
                 
             }
