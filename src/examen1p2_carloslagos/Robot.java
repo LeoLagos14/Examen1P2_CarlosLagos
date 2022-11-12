@@ -9,7 +9,7 @@ package examen1p2_carloslagos;
  *
  * @author clago
  */
-public class Robot {
+public abstract class Robot {
     
     private int id;
     private int x;
@@ -82,6 +82,8 @@ public class Robot {
     public String toString() {
         return "Robot{" + "id=" + id + ", x=" + x + ", y=" + y + ", carga=" + carga + ", fecha=" + fecha + '}';
     }
+    //Polimorfismo
     
+    public [][]char mov(int x, int y,int xf, int yf);
     
 }//fin clase
