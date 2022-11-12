@@ -57,8 +57,8 @@ public class RobotMovilPesado extends Robot{
     }
     
     @Override
-    public int mov(int x, int y,int xf, int yf){
-        return 0;
+    public void mov(int x, int y,int xf, int yf){
+        
     }
     @Override
     public void mnt(){
